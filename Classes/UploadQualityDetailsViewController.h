@@ -25,6 +25,9 @@
 	UITableViewCell *videoQualityMediumCell;
 	UITableViewCell *videoQualityLowCell;
 	
+	UITableViewCell *selectedPhotoQualityCell;
+	UITableViewCell *selectedVideoQualityCell;
+	
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *qualitySelectionTableView;

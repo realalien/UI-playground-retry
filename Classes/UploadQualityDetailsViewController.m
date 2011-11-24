@@ -198,6 +198,25 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
+	
+	NSInteger selectedSection = indexPath.section;
+	NSInteger selectedRow = indexPath.row;
+	NSInteger numOfRowsInThisSect  = [tableView numberOfRowsInSection:selectedSection];
+	
+	
+	if (tableView == self.qualitySelectionTableView) {
+		for (int i=0; i< numOfRowsInThisSect; i++ ) {
+			NSIndexPath *idx = [NSIndexPath indexPathForRow:i inSection:selectedSection];
+			if (i == selectedRow ) {
+				[tableView cellForRowAtIndexPath:idx].accessoryType = UITableViewCellAccessoryCheckmark;
+			}else {
+				[tableView cellForRowAtIndexPath:idx].accessoryType = UITableViewCellAccessoryNone;
+			}
+		}		
+	}
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
