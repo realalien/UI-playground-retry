@@ -15,6 +15,7 @@
 	
 	//Q: why hook up a navigation controller to the app delegate? A:
 	SettingNavViewController *settingNavigationController;
+	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
